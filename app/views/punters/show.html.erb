@@ -1,49 +1,50 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @punter.name %>
+<p id="notice">
+	<%= notice %>
 </p>
 
 <p>
-  <b>Email:</b>
-  <%= @punter.email %>
+	<b>Name:</b>
+	<%= @punter.name %>
 </p>
 
 <p>
-  <b>Address:</b>
-  <%= @punter.address %>
+	<b>Email:</b>
+	<%= @punter.email %>
 </p>
 
+<p>
+	<b>Address:</b>
+	<%= @punter.address %>
+</p>
 
 <%= link_to 'Edit', edit_punter_path(@punter) %> |
 <%= link_to 'Back', punters_path %>
 <h1>Listing jobs</h1>
 
 <table>
-  <tr>
-    
-    <th>Time</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+	<tr>
 
-<% @jobs.each do |job| %>
-  <tr>
-    
-    <td><%= job.time %></td>
-    <td><%= link_to job.description, job %></td>
-    <td><%= link_to 'Edit', edit_job_path(job) %></td>
-    <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+		<th>Time</th>
+		<th>Description</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+
+	<% @jobs.each do |job| %>
+	<tr>
+
+		<td><%= job.time %></td>
+		<td><%= link_to job.description, job %></td>
+		<td><%= link_to 'Edit', edit_job_path(job) %></td>
+		<td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	</tr>
+	<% end %>
 </table>
 
- <% if @jobs.empty? %>
-  No Jobs Here!
+<% if @jobs.empty? %>
+No Jobs Yet.
 <%end%>
 <br />
 
-<%= link_to 'New Job', new_job_path %>
+<%= link_to 'New Job', new_job_path (punter: @punter.id)%>
