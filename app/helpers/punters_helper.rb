@@ -1,0 +1,2 @@
+module PuntersHelper
+end

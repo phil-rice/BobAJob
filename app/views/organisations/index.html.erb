@@ -1,0 +1,29 @@
+<h1>Listing organisations</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @organisations.each do |organisation| %>
+  <tr>
+   
+    <td><%= link_to organisation.name, organisation %></td>
+    <td><%= organisation.email %></td>
+    <td><%= link_to 'Edit', edit_organisation_path(organisation) %></td>
+    <td><%= link_to 'Destroy', organisation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+
+
+<% if @organisations.empty? %>
+  No Organisations here! Go home! (and cry about it) 
+<%end%>
+<br><%= link_to 'New Organisation', new_organisation_path %>
+

@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @organisation.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @organisation.email %>
+</p>
+
+
+<h3>Listing jobbers for <%= @organisation.name %></h3>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @jobbers.each do |jobber| %>
+  <tr>
+    
+    <td><%= link_to jobber.name, jobber %></td>
+    <td><%= jobber.email %></td>
+    <td><%= link_to 'Edit', edit_jobber_path(jobber) %></td>
+    <td><%= link_to 'Destroy', jobber, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<% if @jobbers.empty? %>
+  your jobs are unworthy!
+  No jobbers! but your money is still welcome here
+<%end%>
+<br />
+
+<%= link_to 'New Jobber', new_jobber_path(organisation: @organisation.id) %>
+
+
+
+<%= link_to 'Edit', edit_organisation_path(@organisation) %> |
+<%= link_to 'Back', organisations_path %>

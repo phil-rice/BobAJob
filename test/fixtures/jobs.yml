@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  punter: 1
+  jobber: 1
+  time: 2012-08-31
+  description: MyString
+
+two:
+  punter: 1
+  jobber: 1
+  time: 2012-08-31
+  description: MyString

@@ -1,0 +1,12 @@
+<h1>Dashboard#index</h1>
+<p>Find me in app/views/dashboard/index.html.erb</p>
+<table>
+	<tr><td><%= link_to 'Organisations', organisations_path %></td><td> <%= Organisation.count %></td></tr>
+	<tr><td><%= link_to 'Jobbers', jobbers_path%></td><td> <%= Jobber.count %></td></tr>
+	<tr><td><%= link_to 'Punters', punters_path%></td><td> <%= Punter.count %></td></tr>
+	<tr><td><%= link_to 'Job', jobs_path%></td><td> <%= Job.count %></td></tr>
+</table>
+
+
+
+

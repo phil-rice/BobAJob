@@ -1,0 +1,29 @@
+<h1>Listing punters</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @punters.each do |punter| %>
+  <tr>
+    
+    <td><%= link_to punter.name, punter %></td>
+    <td><%= punter.email %></td>
+    <td><%= punter.address %></td>
+    <td><%= link_to 'Edit', edit_punter_path(punter) %></td>
+    <td><%= link_to 'Destroy', punter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+<% if @punters.empty? %>
+  No punters here! get someone else to give you money 
+<%end%>
+<br />
+
+<%= link_to 'New Punter', new_punter_path %>
